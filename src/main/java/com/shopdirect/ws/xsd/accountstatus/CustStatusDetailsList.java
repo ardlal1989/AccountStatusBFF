@@ -16,17 +16,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations complex type.
+ * <p>Java class for custStatusDetailsList complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations">
+ * &lt;complexType name="custStatusDetailsList">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="accountStatusType" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="accountStatusRecommendation" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="accountStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="accountStatusInd" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,16 +37,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations", propOrder = {
+@XmlType(name = "custStatusDetailsList", propOrder = {
     "accountStatusType",
-    "accountStatusRecommendation"
+    "accountStatusDescription",
+    "accountStatusInd"
 })
-public class ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations {
+public class CustStatusDetailsList {
 
     @XmlElement(required = true)
     protected BigInteger accountStatusType;
     @XmlElement(required = true)
-    protected String accountStatusRecommendation;
+    protected String accountStatusDescription;
+    protected boolean accountStatusInd;
 
     /**
      * Gets the value of the accountStatusType property.
@@ -72,27 +75,43 @@ public class ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendati
     }
 
     /**
-     * Gets the value of the accountStatusRecommendation property.
+     * Gets the value of the accountStatusDescription property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAccountStatusRecommendation() {
-        return accountStatusRecommendation;
+    public String getAccountStatusDescription() {
+        return accountStatusDescription;
     }
 
     /**
-     * Sets the value of the accountStatusRecommendation property.
+     * Sets the value of the accountStatusDescription property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAccountStatusRecommendation(String value) {
-        this.accountStatusRecommendation = value;
+    public void setAccountStatusDescription(String value) {
+        this.accountStatusDescription = value;
+    }
+
+    /**
+     * Gets the value of the accountStatusInd property.
+     * 
+     */
+    public boolean isAccountStatusInd() {
+        return accountStatusInd;
+    }
+
+    /**
+     * Sets the value of the accountStatusInd property.
+     * 
+     */
+    public void setAccountStatusInd(boolean value) {
+        this.accountStatusInd = value;
     }
 
 }

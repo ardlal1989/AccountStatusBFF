@@ -16,6 +16,7 @@ import com.shopdirect.ws.xsd.accountstatus.ComLsdgWsAccountStatusAccountStatusOb
 import com.shopdirect.ws.xsd.accountstatus.ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails;
 import com.shopdirect.ws.xsd.accountstatus.ComLsdgWsAccountStatusAccountStatusObjectsGetCustomerAccountStatusResponse;
 import com.shopdirect.ws.xsd.accountstatus.CustStatusDetails;
+import com.shopdirect.ws.xsd.accountstatus.CustStatusDetailsList;
 import com.shopdirect.ws.xsd.accountstatus.CustomerAccountStatus;
 import com.shopdirect.ws.xsd.accountstatus.GetCustomerAccountStatus;
 import com.shopdirect.ws.xsd.accountstatus.GetCustomerAccountStatusRequest;
@@ -100,8 +101,8 @@ public class AccountStatusController
         ComLsdgWsAccountStatusAccountStatusObjectsGetCustomerAccountStatusResponse gc=new ComLsdgWsAccountStatusAccountStatusObjectsGetCustomerAccountStatusResponse();
         CustomerAccountStatus cs=new CustomerAccountStatus();
         CustStatusDetails custStatDet=new CustStatusDetails();
-        ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
-        List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> custstatList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails>();
+        CustStatusDetailsList custStat=new CustStatusDetailsList();
+        List<CustStatusDetailsList> custstatList=new ArrayList<CustStatusDetailsList>();
         AccountStatusRecommendations accStatRecDet=new AccountStatusRecommendations();
         ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
         List<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations> accStatRecList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations>();
@@ -117,9 +118,11 @@ public class AccountStatusController
         		custStat.setAccountStatusDescription(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).getAccountStatusDescription());
         		custStat.setAccountStatusInd(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).isAccountStatusInd());
         		custstatList.add(custStat);
-        		custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
+        		custStat=new CustStatusDetailsList();
         	}
-        	custStatDet.setCustStatusDetails(custstatList);
+        	custStatDet.setCustStatusDetailsList(custstatList);
+        	
+        	
         	cs.setCustStatusDetails(custStatDet);
         }
         if(((gcas.getCustomerAccountStatus().getAccountStatusRecommendations()!=null))&&(!(gcas.getCustomerAccountStatus().getAccountStatusRecommendations().isEmpty())))

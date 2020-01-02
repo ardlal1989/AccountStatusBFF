@@ -63,11 +63,11 @@ xmlns:tns="http://ws.shopdirect.com/xsd/AccountStatus" elementFormDefault="quali
   
   <xs:complexType name="custStatusDetails">
     <xs:sequence>
-    <xs:element name= "CustStatusDetails" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails" maxOccurs="unbounded"/>
+    <xs:element name= "custStatusDetailsList" type="tns:custStatusDetailsList" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   
-  <xs:complexType name="com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails">
+  <xs:complexType name="custStatusDetailsList">
     <xs:sequence>
     <xs:element name="accountStatusType" type="xs:integer"/>
     <xs:element name="accountStatusDescription" type="xs:string"/>
