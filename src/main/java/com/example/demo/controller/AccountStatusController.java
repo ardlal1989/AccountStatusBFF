@@ -137,6 +137,7 @@ public class AccountStatusController
         		//accStatRecList.add(accStatRec);
         		//accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
         		accStatRecDet.getComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations().add(accStatRec);
+			accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
         	}
         	
         	
