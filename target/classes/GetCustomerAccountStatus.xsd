@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://ws.shopdirect.com/xsd/AccountStatus" 
+xmlns:tns="http://ws.shopdirect.com/xsd/AccountStatus" elementFormDefault="qualified">
+  
+  <xs:element name= "getCustomerAccountStatus" type="tns:getCustomerAccountStatus"/>
+ 
+    <xs:complexType name="getCustomerAccountStatus">
+      <xs:sequence>
+        <xs:element name= "headerInformation" type="tns:headerInformation"/>
+		<xs:element name= "customerDetail" type="tns:customerDetail"/>
+      </xs:sequence>  
+    </xs:complexType>
+  
+  
+  <xs:complexType name="headerInformation">
+    <xs:sequence>
+      <xs:element name="callingApplicationName" type="xs:string"/>
+      <xs:element name="versionNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="customerDetail">
+    <xs:sequence>
+      <xs:element name="accountNumber" type="xs:string"/>
+      <xs:element name="chordiantId" type="xs:string"/>
+	  <xs:element name= "accountStatusType" type="tns:accountStatusType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="accountStatusType">
+    <xs:sequence>
+      <xs:element name= "com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusType" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusType">
+    <xs:sequence>
+      <xs:element name="accountStatusType" type="xs:integer"/>
+      <xs:element name="accountStatusInd" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+  <xs:element name="com.lsdg.ws.AccountStatus.AccountStatusObjects.GetCustomerAccountStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+	  <xs:element name="returnCode" type="xs:int"/>
+      <xs:element name="returnMessage" type="xs:string" minOccurs="0"/>
+      <xs:element name= "customerAccountStatus" type="tns:customerAccountStatus"/>
+      </xs:sequence>  
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="customerAccountStatus">
+    <xs:sequence>
+      <xs:element name="accountNumber" type="xs:string"/>
+      <xs:element name= "custStatusDetails" type="tns:custStatusDetails" minOccurs="0"/>
+	  <xs:element name= "accountStatusRecommendations" type="tns:accountStatusRecommendations" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="custStatusDetails">
+    <xs:sequence>
+    <xs:element name= "com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails">
+    <xs:sequence>
+    <xs:element name="accountStatusType" type="xs:integer"/>
+    <xs:element name="accountStatusDescription" type="xs:string"/>
+	<xs:element name="accountStatusInd" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="accountStatusRecommendations">
+    <xs:sequence>
+    <xs:element name= "com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations">
+    <xs:sequence>
+    <xs:element name="accountStatusType" type="xs:integer"/>
+    <xs:element name="accountStatusRecommendation" type="xs:string"/>
+	
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>
