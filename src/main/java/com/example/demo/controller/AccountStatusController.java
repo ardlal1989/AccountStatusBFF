@@ -102,25 +102,27 @@ public class AccountStatusController
         CustomerAccountStatus cs=new CustomerAccountStatus();
         CustStatusDetails custStatDet=new CustStatusDetails();
         ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
-       // List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> custstatList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails>();
+       //List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> custstatList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails>();
         AccountStatusRecommendations accStatRecDet=new AccountStatusRecommendations();
         ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
-        //List<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations> accStatRecList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations>();
+        //ok List<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations> accStatRecList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations>();
         
         if(!(gcas.getCustomerAccountStatus()==null))
         {
         if((gcas.getCustomerAccountStatus().getCustStatusDetails()!=null)&&(!(gcas.getCustomerAccountStatus().getCustStatusDetails().isEmpty())))
         {
-        	System.out.println("In fro");
+        	
         	for (int i=0;i<gcas.getCustomerAccountStatus().getCustStatusDetails().size();i++)
         	{
         		custStat.setAccountStatusType(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).getAccountStatusType());
         		custStat.setAccountStatusDescription(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).getAccountStatusDescription());
         		custStat.setAccountStatusInd(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).isAccountStatusInd());
         		//custstatList.add(custStat);
-        		//custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
+        		custStatDet.getComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails().add(custStat);
+        		custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
+        		
         	}
-        	custStatDet.setComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails(custStat);
+        	
         	
         	
         	cs.setCustStatusDetails(custStatDet);
@@ -134,8 +136,9 @@ public class AccountStatusController
         		accStatRec.setAccountStatusRecommendation(gcas.getCustomerAccountStatus().getAccountStatusRecommendations().get(i).getAccountStatusRecommendation());
         		//accStatRecList.add(accStatRec);
         		//accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
+        		accStatRecDet.getComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations().add(accStatRec);
         	}
-        	accStatRecDet.setComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations(accStatRec);
+        	
         	
             cs.setAccountStatusRecommendations(accStatRecDet);
         }
