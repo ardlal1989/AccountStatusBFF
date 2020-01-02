@@ -72,10 +72,8 @@ public class CustStatusDetails {
         }
         return this.comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails;
     }
-
-	public void setCustStatusDetails(
-			List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails) {
-		this.comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails = comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails;
+public void setCustStatusDetails(List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> custStatusDetails) {
+		this.custStatusDetails = custStatusDetails;
 	}
 
 }
