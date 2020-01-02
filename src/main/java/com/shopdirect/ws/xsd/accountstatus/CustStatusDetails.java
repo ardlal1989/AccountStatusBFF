@@ -73,7 +73,7 @@ public class CustStatusDetails {
         return this.comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails;
     }
 
-	public void setComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails(
+	public void setCustStatusDetails(
 			List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails) {
 		this.comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails = comLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails;
 	}
