@@ -119,7 +119,7 @@ public class AccountStatusController
         		custstatList.add(custStat);
         		custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
         	}
-        	custStatDet.setComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails(custstatList);
+        	custStatDet.setCustStatusDetails(custstatList);
         	cs.setCustStatusDetails(custStatDet);
         }
         if(((gcas.getCustomerAccountStatus().getAccountStatusRecommendations()!=null))&&(!(gcas.getCustomerAccountStatus().getAccountStatusRecommendations().isEmpty())))
