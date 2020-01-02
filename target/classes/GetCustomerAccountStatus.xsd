@@ -60,14 +60,14 @@ xmlns:tns="http://ws.shopdirect.com/xsd/AccountStatus" elementFormDefault="quali
 	  <xs:element name= "accountStatusRecommendations" type="tns:accountStatusRecommendations" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  
   <xs:complexType name="custStatusDetails">
     <xs:sequence>
-    <xs:element name= "custStatusDetailsList" type="tns:custStatusDetailsList" maxOccurs="unbounded"/>
+    <xs:element name= "com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails" minOccurs="0"/>
+    
     </xs:sequence>
   </xs:complexType>
-  
-  <xs:complexType name="custStatusDetailsList">
+    
+  <xs:complexType name="com.lsdg.ws.AccountStatus.AccountStatusObjects.CustStatusDetails">
     <xs:sequence>
     <xs:element name="accountStatusType" type="xs:integer"/>
     <xs:element name="accountStatusDescription" type="xs:string"/>
@@ -75,9 +75,10 @@ xmlns:tns="http://ws.shopdirect.com/xsd/AccountStatus" elementFormDefault="quali
     </xs:sequence>
   </xs:complexType>
   
+  
   <xs:complexType name="accountStatusRecommendations">
     <xs:sequence>
-    <xs:element name= "com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations" maxOccurs="unbounded"/>
+    <xs:element name= "com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations" type="tns:com.lsdg.ws.AccountStatus.AccountStatusObjects.AccountStatusRecommendations" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   

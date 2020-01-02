@@ -16,7 +16,7 @@ import com.shopdirect.ws.xsd.accountstatus.ComLsdgWsAccountStatusAccountStatusOb
 import com.shopdirect.ws.xsd.accountstatus.ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails;
 import com.shopdirect.ws.xsd.accountstatus.ComLsdgWsAccountStatusAccountStatusObjectsGetCustomerAccountStatusResponse;
 import com.shopdirect.ws.xsd.accountstatus.CustStatusDetails;
-import com.shopdirect.ws.xsd.accountstatus.CustStatusDetailsList;
+
 import com.shopdirect.ws.xsd.accountstatus.CustomerAccountStatus;
 import com.shopdirect.ws.xsd.accountstatus.GetCustomerAccountStatus;
 import com.shopdirect.ws.xsd.accountstatus.GetCustomerAccountStatusRequest;
@@ -101,11 +101,11 @@ public class AccountStatusController
         ComLsdgWsAccountStatusAccountStatusObjectsGetCustomerAccountStatusResponse gc=new ComLsdgWsAccountStatusAccountStatusObjectsGetCustomerAccountStatusResponse();
         CustomerAccountStatus cs=new CustomerAccountStatus();
         CustStatusDetails custStatDet=new CustStatusDetails();
-        CustStatusDetailsList custStat=new CustStatusDetailsList();
-        List<CustStatusDetailsList> custstatList=new ArrayList<CustStatusDetailsList>();
+        ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
+       // List<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails> custstatList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails>();
         AccountStatusRecommendations accStatRecDet=new AccountStatusRecommendations();
         ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
-        List<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations> accStatRecList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations>();
+        //List<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations> accStatRecList=new ArrayList<ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations>();
         
         if(!(gcas.getCustomerAccountStatus()==null))
         {
@@ -117,10 +117,10 @@ public class AccountStatusController
         		custStat.setAccountStatusType(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).getAccountStatusType());
         		custStat.setAccountStatusDescription(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).getAccountStatusDescription());
         		custStat.setAccountStatusInd(gcas.getCustomerAccountStatus().getCustStatusDetails().get(i).isAccountStatusInd());
-        		custstatList.add(custStat);
-        		custStat=new CustStatusDetailsList();
+        		//custstatList.add(custStat);
+        		//custStat=new ComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails();
         	}
-        	custStatDet.setCustStatusDetailsList(custstatList);
+        	custStatDet.setComLsdgWsAccountStatusAccountStatusObjectsCustStatusDetails(custStat);
         	
         	
         	cs.setCustStatusDetails(custStatDet);
@@ -132,10 +132,10 @@ public class AccountStatusController
         	{
         		accStatRec.setAccountStatusType(gcas.getCustomerAccountStatus().getAccountStatusRecommendations().get(i).getAccountStatusType());
         		accStatRec.setAccountStatusRecommendation(gcas.getCustomerAccountStatus().getAccountStatusRecommendations().get(i).getAccountStatusRecommendation());
-        		accStatRecList.add(accStatRec);
-        		accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
+        		//accStatRecList.add(accStatRec);
+        		//accStatRec=new ComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations();
         	}
-        	accStatRecDet.setComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations(accStatRecList);
+        	accStatRecDet.setComLsdgWsAccountStatusAccountStatusObjectsAccountStatusRecommendations(accStatRec);
         	
             cs.setAccountStatusRecommendations(accStatRecDet);
         }
